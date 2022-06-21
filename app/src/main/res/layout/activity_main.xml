@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/audio_track_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AudioTrack"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/play_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="play 播放"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/audio_track_tv" />
+
+    <Button
+        android:id="@+id/pause_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="pause 暂停"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toEndOf="@+id/play_btn"
+        app:layout_constraintTop_toBottomOf="@+id/audio_track_tv" />
+
+    <Button
+        android:id="@+id/stop_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="stop 停止"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toEndOf="@+id/pause_btn"
+        app:layout_constraintTop_toBottomOf="@+id/audio_track_tv" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/loop_sw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:checked="false"
+        android:text="循环播放"
+        android:textOff="关"
+        android:textOn="开"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/play_btn"
+        app:showText="true" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/mode_sw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:checked="false"
+        android:text="模式"
+        android:textOff="stream"
+        android:textOn="static"
+        app:layout_constraintStart_toEndOf="@+id/loop_sw"
+        app:layout_constraintTop_toBottomOf="@+id/play_btn"
+        app:showText="true" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/channel_sw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:checked="false"
+        android:text="单双通道"
+        android:textOff="单"
+        android:textOn="双"
+        app:layout_constraintStart_toEndOf="@+id/mode_sw"
+        app:layout_constraintTop_toBottomOf="@+id/play_btn"
+        app:showText="true" />
+
+    <TextView
+        android:id="@+id/vol_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="音量"
+        android:layout_margin="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loop_sw" />
+
+    <SeekBar
+        android:id="@+id/vol_sb"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintStart_toEndOf="@+id/vol_tv"
+        app:layout_constraintTop_toBottomOf="@+id/loop_sw" />
+
+    <TextView
+        android:id="@+id/vol_left_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="左通道音量"
+        android:visibility="gone"
+        android:layout_margin="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loop_sw" />
+
+    <SeekBar
+        android:id="@+id/vol_left_sb"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_margin="10dp"
+        app:layout_constraintStart_toEndOf="@+id/vol_left_tv"
+        app:layout_constraintTop_toBottomOf="@+id/loop_sw" />
+
+    <TextView
+        android:id="@+id/vol_right_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="右通道音量"
+        android:visibility="gone"
+        android:layout_margin="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vol_left_tv" />
+
+    <SeekBar
+        android:id="@+id/vol_right_sb"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_margin="10dp"
+        app:layout_constraintStart_toEndOf="@+id/vol_right_tv"
+        app:layout_constraintTop_toBottomOf="@+id/vol_left_sb" />
+</androidx.constraintlayout.widget.ConstraintLayout>
